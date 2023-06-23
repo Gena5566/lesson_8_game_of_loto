@@ -1,4 +1,8 @@
 import random
+<<<<<<< HEAD
+=======
+import pytest
+>>>>>>> 96ba425 (Initial commit)
 
 class Game:
     def __init__(self):
