@@ -1,7 +1,7 @@
 from game_of_loto import Game
 from unittest.mock import patch
 import random
-import pytest
+
 def test_build_bingo_card():
     game = Game()
     card = game.build_bingo_card()

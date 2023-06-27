@@ -9,6 +9,19 @@ class Game:
         self.player_score = 0
         self.comp_score = 0
 
+    def __str__(self):
+        return f"Game: player_score={self.player_score}, comp_score={self.comp_score}"
+
+    def __eq__(self, other):
+        return (
+            isinstance(other, Game) and
+            self.player_score == other.player_score and
+            self.comp_score == other.comp_score
+        )
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
     def start_game(self):
         print('Начало игры')
 
@@ -21,7 +34,7 @@ class Game:
             row = []
             for _ in range(9):
                 if numbers:
-                    # Вероятность пропуска числа составляет 20%
+                    # Вероятность пропуска числа составляет 40%
                     if random.random() < 0.4:
                         row.append('')
                     else:
@@ -96,8 +109,8 @@ class Game:
 
     def print_scores(self):
         print("Счет:")
-        print("Игрок: {}".format(self.player_score))
-        print("Компьютер: {}".format(self.comp_score))
+        print(f"Игрок: {self.player_score}")
+        print(f"Компьютер: {self.comp_score}")
 
     def end_game(self):
         print("Программа завершена.")
